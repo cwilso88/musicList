@@ -8,7 +8,10 @@ class SongList extends Component {
             return (
                 <div className="item" key={song.title}>
                     <div className="right floated content">
-                        <button className="ui button primary">
+                        <button 
+                            className="ui button primary"
+                            onClick={() => this.props.selectSong(song)}
+                        >
                             Select
                         </button>
                     </div>
@@ -18,7 +21,6 @@ class SongList extends Component {
         });
     }
   render() {
-      console.log(selectSong);
     return (
       <div className="ui divided list">
         {this.renderList()}
@@ -33,6 +35,4 @@ const mapStateToProps = (state) => {
     };
 }
 
-export default connect(mapStateToProps, {
-    selectSong
-})(SongList);
+export default connect(mapStateToProps, { selectSong })(SongList);
