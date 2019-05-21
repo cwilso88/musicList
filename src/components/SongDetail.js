@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'net';
 
-const SongDetail = () => {
+const SongDetail = (props) => {
+    console.log(props);
     return (
         <div>
             Song Detail
@@ -10,7 +11,7 @@ const SongDetail = () => {
 }
 
 const mapStateToProps = (state) => {
-    { song: state.selectedSong }
+  return { song: state.selectedSong }
 }
 
 export default connect(mapStateToProps)(SongDetail);
