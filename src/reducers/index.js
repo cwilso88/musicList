@@ -10,3 +10,9 @@ export const songListReducer = () => {
 };
 
 // Selected song reducer
+export const selectedSongReducer = (selectedSong=null, action) => {
+    if(action.type === 'SONG_SELECTED') {
+        return action.payload;
+    }
+    return selectedSong;
+};
