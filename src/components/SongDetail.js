@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'net';
 
 const SongDetail = () => {
     return (
@@ -8,4 +9,8 @@ const SongDetail = () => {
     )
 }
 
-export default SongDetail;
+const mapStateToProps = (state) => {
+    { song: state.selectedSong }
+}
+
+export default connect(mapStateToProps)(SongDetail);
